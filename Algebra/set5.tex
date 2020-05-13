@@ -1,9 +1,18 @@
 \section{Desigualdad de reacomodo}
 
+\begin{ejer}
+	Para $a,b,c \in \mathbb{R}^{+}$, probar que $a^3+b^3+c^3\geq a^2 b+b^2 c+c^2 a$
+\end{ejer}
 \begin{sol}
 	Suponga $a\geq b\geq c $ y aplique reacomodo.
 \end{sol}
 
+\begin{ejer}
+	Para $a,b,c\in\mathbb{R}^{+}$, probar que
+	\begin{equation}
+	\frac{a+b+c}{abc} \leq \frac{1}{a^{2}} + \frac{1}{b^{2}}  + \frac{1}{c^{2}} 
+	\end{equation}	
+\end{ejer}
 \begin{sol}
 	Suponga $a\geq b\geq c \implies \frac{1}{c} \geq \frac{1}{b} \geq \frac{1}{a}$. Note que
 	\begin{align}
@@ -12,6 +21,12 @@
 	Debido a la desigualdad de reacomodo.
 \end{sol}
 
+\begin{ejer}
+	Si $a_{1},a_{2},…,a_{n}\in \mathbb{R}^{+}$ y $s=a_{1}+a_{2}+ \dots +a_{n}$, entonces
+	\begin{equation}
+	    \frac{a_{1}}{s-a_{1}} + \frac{a_{2}}{s-a_{2}} + \dots + \frac{a_{n}}{s-a_{n}} \geq \frac{n}{n-1}
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	Suponga un orden de los factores: $a_{1} \geq a_{2} \geq a_{3} \dots  \geq a_{n}$,  $s-a_{n} \geq s-a_{n-1} \dots  \geq s-a_{1} \implies \frac{1}{s-a_{1}} \geq \frac{1}{s-a_{2}} \dots \geq \frac{1}{s-a_{n}}$. Apliquemos reacomodo $n-1$ veces y sumemos los resultados: (considere siempre $a_{i mod n}$ cuando $i>n$)
 	\begin{align}
@@ -23,18 +38,44 @@
 	Que implica $(n-1)\sum_{i=1}^{n} \frac{a_{i}}{s-a_{i}} \geq \sum_{i}^{n} \frac{s-_a{i}}{s-a_{i}} = n \implies \sum_{i=1}^{n} \frac{a_{i}}{s-a_{i}} \geq \frac{n}{n-1}\hspace{0.2cm}\square$
 \end{sol}
 
+\begin{ejer}
+	Sean $x_{1},x_{2},\dots ,x_{n} \in \mathbb{R}^{+}$. Usando reacomodo, muestre que
+	\begin{equation}
+	    \sqrt{\frac{x_{1}^{2} + x_{2}^{2} + \dots + x_{n}^{2}}{n}} \geq \frac{x_{1} + x_{2} +\dots + x_{n}}{n}
+	\end{equation}
+	Con igualdad si y solamente si $x_{1} = x_{2} = \dots = x_{n}$
+\end{ejer}
+
 \begin{sol}
-	Solucion en proceso
+	Sea $G = \sqrt[n]{x_{1}x_{2}\dots x_{n}}$. Sean adem\'as $a_{i} = \frac{x_{1}x_{2} \dots x_{i}}{G^{i}}, \forall i$. Por reacomodo tenemos que $\frac{a_{1}}{a_{2}} + \frac{a_{2}}{a_{3}} + \dots \frac{a_{n}}{a_{1}}  \geq \frac{a_{1}}{a_{1}} + \frac{a_{2}}{a_{2}} + \dots \frac{a_{n}}{a_{n}}  = n$, pero $\frac{a_{1}}{a_{2}} + \frac{a_{2}}{a_{3}} + \dots \frac{a_{n}}{a_{1}} = \frac{G}{x_{1}} + \frac{G}{x_{2}} \dots \frac{G}{x_{n}}$. El resultado sigue.   
 \end{sol}
+
+\begin{ejer}
+	Si $a,b,c \in \mathbb{R}^{+}$ son tales que $a+b+c=1$, probar que $ab+bc+ca\leq 1/3$
+\end{ejer}
 
 \begin{sol}
 	Vea que $(a+b+c)^2 = 1 \implies ab+bc+ac = \frac{1-a^2-b^2-c^2}{2}$. Entonces $ab+bc+ca \leq \frac{1}{3} \iff \frac{1-a^2-b^2-c^2}{2} \geq \frac{1}{3} \iff \frac{1}{3} \leq a^2+b^2+c^2$. La \'ultima desigualdad sigue de $\frac{a+b+c}{3} \leq \sqrt{\frac{a^2+b^2+c^2}{3}}$
 \end{sol}
 
+\begin{ejer}
+	Dados números reales $a_1\leq a_2\leq \dots \leq a_n$ y $b_1\leq b_2\leq \dots \leq b_n$, se tiene que
+	\begin{equation}
+	\frac{a_{1}b_{1} + a_{2}b_{2} + \dots a_{n}b_{n}}{n} \geq \left( \frac{a_{1} + a_{2} + \dots a_{n}}{n} \right)\left( \frac{b_{1} + b_{2} + \dots b_{n}}{n} \right)
+	\end{equation}
+\end{ejer}
+
 \begin{sol}
 	Observe que, por reacomodo, $\sum_{i=1}^{n} a_{i}b_{i} \geq \sum_{i=1}^{n} a_{i+j}b_{i}, \forall i = 1, 2, \dots n$, donde se considera $a_{i} = a_{i+n}, \forall i$. Definamos $S_{1} = \sum_{i=1}^{n} a_{i}, S_{2} = \sum_{i=1}^{n} b_{i}$. Sumando estas $n$ desigualdades, tenemos
 	$n(\sum_{i=1}^{n} a_{i}b_{i}) \geq \sum_{i=1}^{n} S_{1}b_{i} = S_{1}\sum_{i=1}^{n} b_{i} = S_{1}S_{2}$. Como queriamos demostrar
 \end{sol}
+
+\begin{ejer}
+	Sean $a,b,c$ reales positivos tales que $ab+bc+ca=3$. Pruebe que
+	\begin{equation}
+	\frac{a^{3}}{b+c} + \frac{b^{3}}{a+c} + \frac{c^{3}}{b+a}  \geq \frac{3}{2} 
+	\end{equation}
+\end{ejer}
 
 \begin{sol}
 	Considere un orden: $a \geq b \geq c\implies \frac{1}{b+c} \geq \frac{1}{a+c} \geq \frac{1}{a+b} $. Considere las siguientes desigualdades, todas obtenidas con reacomodo (la ultima usando reacomodo dos veces)
@@ -51,6 +92,13 @@
 	Donde usamos el hecho de que $ab+bc+ca = 3 $ y la desigualdad de Nesbitt.
 \end{sol}
 
+\begin{ejer}
+    Sean$ a_1,a_2,a_3,a_4$ reales positivos. Pruebe que
+    
+    \begin{equation}
+    \sum_{1 \leq i < j < k \leq 4} \frac{a_{i}^{3} + a_{j}^{3} + a_{k}^{3}}{a_{i} + a_{j} + a_{k}} \geq a_{1}^{2} + a_{2}^{2} + a_{3}^{2} + a_{4}^{2}
+    \end{equation} 
+\end{ejer}
 \begin{sol}
 	\begin{lem}
 		\centering {$\frac{a^3+b^3+c^3}{a+b+c} \geq \frac{1}{3} (a^2+b^2+c^2)$}
@@ -60,6 +108,8 @@
 	
 	Tenemos pues 
 
-	\centering{$\sum_{\substack{1\leq i < j < k \leq 4}} \frac{a_{i}^3+a_{j}^{3}+a_{k}^{3}}{a_{i}+a_{j}+a_{k}} \geq \Sigma_{1\leq i < j < k \leq 4} \frac{a_{i}^2+a_{j}^{2}+a_{k}^{2}}{3} = a_{1}^{2}+a_{2}^{2}+a_{3}^{2}+a_{4}^{2}\hspace{0.1cm} \square$}
+	\begin{equation}
+		\sum_{\substack{1\leq i < j < k \leq 4}} \frac{a_{i}^3+a_{j}^{3}+a_{k}^{3}}{a_{i}+a_{j}+a_{k}} \geq \Sigma_{1\leq i < j < k \leq 4} \frac{a_{i}^2+a_{j}^{2}+a_{k}^{2}}{3} = a_{1}^{2}+a_{2}^{2}+a_{3}^{2}+a_{4}^{2}
+	\end{equation} 
 \end{sol}
 

@@ -1,15 +1,36 @@
 \section{Desigualdad de Cauchy-Schwarz}
+\begin{ejer}
+	Sean $x_{1},x_{2},\dots ,x_{n} \in \mathbb{R}^{+}$. Muestre que
+	\begin{equation}
+	\sqrt{\frac{x_{1}^{2} + x_{2}^{2} + \dots + x_{n}^{2}}{n}} \geq \frac{x_{1} + x_{2} +\dots + x_{n}}{n}
+	\end{equation}
+	Con igualdad si y solamente si $x_{1} = x_{2} = \dots = x_{n}$
+\end{ejer}
 
 \begin{sol}
-	\begin{align}
-	2\bigg(\frac{1}{a+b}+\frac{1}{a+c}+\frac{1}{c+b}\bigg) &\geq \frac{9}{a+b+c} \iff \\
-	\frac{2(a+b+c)}{3} &\geq \frac{3}{\frac{1}{a+b}+\frac{1}{a+c}+\frac{1}{c+b}} \iff \\
-	\frac{(a+b)+(b+c)+(c+a)}{3} &\geq \frac{3}{\frac{1}{a+b}+\frac{1}{a+c}+\frac{1}{c+b}}
-	\end{align}
-	Que sigue por MA-MG
+	El resultado sigue aplicando CS con $(x_{i})_{i=1}^{n} = (x_{i})_{i=1}^{n}, (y_{i})_{i=1}^{n} = (\frac{1}{n})_{i=1}^{n}$
+\end{sol}
+\begin{ejer}
+	Sean $x_{1}, x_{2} \dots x_{n} \in \mathbb{R}$. Pruebe que
+	\begin{equation}
+	\sqrt{x_{1}^{2} + (1-x_{2})^{2}} + \sqrt{x_{2}^{2} + (1-x_{3})^{2}} + \dots \sqrt{x_{n}^{2} + (1-x_{1})^{2}} \geq \frac{n}{\sqrt{2}} 
+	\end{equation} 
+\end{ejer}
+
+\begin{sol}
+	observe que $\sqrt{1 + 1}\sqrt{a^{2} + (1-b)^{2}} \geq a+1-b$, por CS. Aplicando esa desigualdad a cada miembro y sumando, sigue el resultado.
 \end{sol}
 
-\begin{sol}
+\begin{ejer}
+	Si $a_1,a_2,…,a_n \in \mathbb{R}$ y $b_1,b_2,…,b_n$ son reales positivos, entonces
+	\begin{equation}
+	    \frac{a_{1}^{2}}{b_{1}} + \frac{a_{2}^{2}}{b_{2}} + \dots \frac{a_{n}^{2}}{b_{n}} \geq \frac{(a_{1} + a_{2} + \dots + a_{n})^{2}}{b_{1} + b_{2} + \dots + b_{n}}
+	\end{equation}
+	
+	Y determine el caso de la igualdad.
+\end{ejer}
+
+\begin{sol} \label{engel}
 	Veamos que la desigualdad del problema es equivalente a
 	\begin{center}
 		$$ (\sum_{i=1}^{n} b_{i})(\sum_{i=1}^{n} \frac{a_{i}^{2}}{b_{i}})\geq (\sum_{i=1}^{n} a_{i})^{2} $$
@@ -18,13 +39,26 @@
 	Lo cual sigue de inmediato al usar CS con $(x_{i})_{i=1}^{n} = (\sqrt{b_{i}})_{i=1}^{n}, (y_{i})_{i=1}^{n} = (\frac{a_{i}}{\sqrt{b_{i}}})_{i=1}^{n}$. Como se ha usado \'unicamente la desigualdad CS, se aplica su criterio de igualdad, es decir, $a_{i} = \lambda b_{i}$.
 \end{sol}
 
+\begin{ejer}
+	Sean $a, b, c, d$ reales positivos con $a++c+d = 1$. Muestre que
+	\begin{equation}
+	 \frac{a^{2}}{a+b} +\frac{b^{2}}{b+c} +\frac{c^{2}}{c+d} +\frac{d^{2}}{d+a} \geq \frac{1}{2}
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	Este ejercicio es un caso espec\'ifico del ejercicio siguiente con $n =4$.
 \end{sol}
 
+\begin{ejer}
+	Sean $a_{1}, a_{2} \dots a_{n}, b_{1} \dots b_{n}$ reales positivos con $\sum a_{i} = \sum b_{i}$. Pruebe que
+	\begin{equation}
+	\sum_{i= 1}^{n} \frac{a_{i}^{2}}{a_{i} + b_{i}} \geq \frac{1}{2} \sum_{i=1}^{n} a_{i}
+	\end{equation}
+\end{ejer}
+
 \begin{sol}
-	\textbf{Notaci\'on}: si pongo una prima en la variable me refiero a la variable del ejercicio 6.2
-	Usando el ejercicio 6.2, con $b'_{i} = a_{i} +b_{i}, a'_{i} = a_{i}$, tenemos que
+	\textbf{Notaci\'on}: si pongo una prima en la variable me refiero a la variable del ejercicio \ref{engel}
+	Usando el ejercicio \ref{engel}, con $b'_{i} = a_{i} +b_{i}, a'_{i} = a_{i}$, tenemos que
 	\begin{align}
 		 \left(\sum_{i=1}^{n} b'_{i}\right)\left(\sum_{i=1}^{n} \frac{\left(a'_{i}\right)^{2}}{b'_{i}}\right)&\geq \left(\sum_{i=1}^{n} a'_{i}\right)^{2}  \implies \\		 
 		 \left(2\sum_{i=1}^{n} a_{i}\right)\left(\sum_{i=1}^{n} \frac{a_{i}^{2}}{a_{i} + b_{i}}\right)&\geq \left(\sum_{i=1}^{n} a_{i}\right)^{2} \implies \\
@@ -32,17 +66,31 @@
 	\end{align}
 \end{sol}
 
-\begin{sol}
-	El resultado sigue aplicando CS con $(x_{i})_{i=1}^{n} = (x_{i})_{i=1}^{n}, (y_{i})_{i=1}^{n} = (\frac{1}{n})_{i=1}^{n}$
-\end{sol}
+\begin{ejer}
+		Para $a,b,c$ reales positivos tales que $a+b+c=1$, pruebe que $\sqrt{4a+1}+\sqrt{4b+1}+\sqrt{4c+1} \leq \sqrt{21}$.
+\end{ejer}
 
 \begin{sol}
 	Elevando al cuadrado ambos lados queda: $4(a+b+c) + 3 + 2(\sqrt{4a+1}\sqrt{4b+1}+\sqrt{4b+1}\sqrt{4c+1}+\sqrt{4a+1}\sqrt{4c+1}) \leq 21 \implies \sqrt{4a+1}\sqrt{4b+1}+\sqrt{4b+1}\sqrt{4c+1}+\sqrt{4a+1}\sqrt{4c+1} \leq 7$. Ahora aplicamos CS con $(x_{1}, x_{2}, x_{3}) = (y_{1}, y_{2}, y_{3}) = (\sqrt{4a+1}, \sqrt{4b+1}, \sqrt{4c+1})$, el resultado sigue.
 \end{sol}
 
+\begin{ejer}
+	Sean $x, y, z$ reales mayores a 1 tales que $\frac{1}{x} +\frac{1}{y} + \frac{1}{z} = 2$. Pruebe que
+	\begin{equation}
+	\sqrt{x+y+z} \geq \sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1} 
+	\end{equation}
+\end{ejer}
 \begin{sol}
-	Solucion pendiente.
+	Observe (!) que $\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z} = 3 -2 = 1$. Luego, tenemos que $\sqrt{\frac{x-1}{x} + \frac{y-1}{y} + \frac{z-1}{z}}\sqrt{x+y+z} \geq (\sqrt{x-1} + \sqrt{y-1} + \sqrt{z-1})$, por CS. El resultado sigue.
 \end{sol}
+
+\begin{ejer}
+	Sean $a_{1}, a_{2} \dots a_{n}$ reales positivos con $\sum a_{i} = 1$. Muestre que
+	
+	\begin{equation}
+	\frac{a_{1}}{\sqrt{1-a_{1}}} +\frac{a_{2}}{\sqrt{1-a_{2}}} + \dots + \frac{a_{n}}{\sqrt{1-a_{n}}} \geq \frac{1}{\sqrt{n-1}} (\sqrt{a_{1}} + \sqrt{a_{2}} + \dots + \sqrt{a_{n}})
+	\end{equation}
+\end{ejer}
 
 \begin{sol}
 	Solucion pendiente.

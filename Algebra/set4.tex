@@ -1,5 +1,12 @@
 \section{Desigualdades}
 
+
+\begin{ejer}
+		Sean $a,b$ números reales con $0\leq a \leq b\leq 1$. Muestre que
+	\begin{equation}
+	     0\leq \frac{a}{1+b}+\frac{b}{1+a}\leq 1
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	La primera desigualdad es trivial. Para la segunda. Veamos que 
 	\begin{align}
@@ -10,6 +17,13 @@
 	Que se cumple puesto que $a,b \in [0,1]$
 \end{sol}
 
+
+\begin{ejer}
+		Sean $a,b,c,d \in\mathbb{R}$ con $a+d=b+c$. Muestre que
+	\begin{equation}
+	    (a-b)(c-d)+(a-c)(b-d)+(d-a)(b-c)\geq 0.
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	Llame $z = a-b = c-d, x = a-c=b-d$. Entonces la desigualdad puede ser escrita como :
 	
@@ -17,7 +31,57 @@
 	
 \end{sol}
 
+\begin{ejer}
+	Pruebe que si las medias aritmética y geométrica son iguales, entonces $a_{1}=a_{2}=\dots=a_{n}$
+\end{ejer}
 
+\begin{sol}
+	Utilizaremos inducci\'on de Cauchy, como en la prueba del folleto. Para ello, empezamos con el caso base:
+	
+	\begin{enumerate}[i.]
+		\item $P_{2}$ es verdad. En efecto, si $\frac{a+b}{2} = \sqrt{ab} \iff (a-b)^{2} = 0 \implies a = b$. 
+		\item ($P_{n} \implies P_{n-1}$). En efecto, llamemos $g = \sqrt[n-1]{a_{1}a_{2}\dots a_{n}}$. Entonces $\frac{a_{1}+a_{2} + \dots a_{n}}{n-1} = g \iff a_{1}+a_{2} + \dots a_{n} + g = ng \iff \frac{a_{1}+a_{2} + \dots a_{n} + g}{n} = g \overset{P_{n}}{\iff} a_{1} = a_{2} = \dots = a_{n-1} = g$. 
+		\item ($P_{n} \implies P_{2n}$). Veamos la siguiente cadena de desigualdades: \\
+		$a_{1} + a_{2} + \dots + a_{2n} = (a_{1} + a_{2}) + \dots (a_{2n-1} + a_{2n}) \geq  2(\sqrt{a_{1}a_{2}} + \dots + \sqrt{a_{2n-1}  a_{2n}}) \geq 2n(\sqrt{a_{1}a_{2}} \dots \sqrt{a_{2n-1}a_{2n}})^{\frac{1}{n}} \geq 2n \sqrt[2n]{a_{1}a_{2} \dots a_{2n}}$
+		
+		Como el primer y el \'ultimo termino son iguales, en realidad todos los elementos son iguales. En particular, por $P_{n}$, tenemos que $\sqrt{a_{1}a_{2}} = \dots \sqrt{a_{2n-1}a_{2n}} = C$. Usando otra permutaci\'on para agrupar de a $2$, sigue que $\sqrt{a_{i}a_{j}} = \sqrt{a_{k}a_{l}}, \forall i, j, k, l$. El resultado sigue. \flushright$\square$
+	\end{enumerate}
+\end{sol}
+
+\begin{ejer}
+	Para $a, b, c \in \mathbb{R}^{+}$, pruebe que:
+	\begin{equation}
+	2\left(\frac{1}{a+b} + \frac{1}{b+c} + \frac{1}{a+c}\right) \geq \frac{9}{a+b+c}
+	\end{equation}
+\end{ejer}
+
+\begin{sol}
+	\begin{align}
+	2\bigg(\frac{1}{a+b}+\frac{1}{a+c}+\frac{1}{c+b}\bigg) &\geq \frac{9}{a+b+c} \iff \\
+	\frac{2(a+b+c)}{3} &\geq \frac{3}{\frac{1}{a+b}+\frac{1}{a+c}+\frac{1}{c+b}} \iff \\
+	\frac{(a+b)+(b+c)+(c+a)}{3} &\geq \frac{3}{\frac{1}{a+b}+\frac{1}{a+c}+\frac{1}{c+b}}
+	\end{align}
+	Que sigue por MA-MG
+\end{sol}
+
+\begin{ejer}
+	Sean $a,b, c$ reales positivos con $abc = 1$. Pruebe que 
+	\begin{equation}
+	    a^2+b^2+c^2\geq a+b+c
+	\end{equation}
+\end{ejer}
+
+\begin{sol}
+	Usaremos la desigualdad $a + \frac{1}{a} \geq 2$, que sale de aplicar MA-MG. 
+	
+	Ahora bien, tenemos que $a^{2} + b^{2} + c^{2} + 3\geq a(a+\frac{1}{a}) + b(b+\frac{1}{b}) + c(c+ \frac{1}{c}) \geq 2(a+b+c) \geq a+b+c +3$. Donde usamos que $a+b+c \geq 3$, de nuevo por MA-MG. 
+\end{sol}
+\begin{ejer}
+	Para $x, y, z \in \mathbb{R}^{+}$, pruebe que:
+	\begin{equation}
+	\frac{1}{x} + \frac{1}{y} + \frac{1}{z} \geq \frac{1}{\sqrt{xy}} + \frac{1}{\sqrt{yz}} + \frac{1}{\sqrt{zx}}
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	Vea que $\sqrt{xy} \geq \frac{2}{\frac{1}{x}+\frac{1}{y}} \implies \frac{1}{\sqrt{xy}} \leq \frac{x+y}{2xy}$. Luego,
 	
@@ -28,15 +92,33 @@
 	\end{align}
 \end{sol}
 
-
+\begin{ejer}
+	Para $x, y, z \in \mathbb{R}^{+}$, pruebe que:
+	\begin{equation}
+	x^2+y^2+z^2\geq x\sqrt{y^2+z^2}+y\sqrt{x^2+z^2 }
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	Apliquemos MA-MG a $\sqrt{y^2(x^2+z^2)} \leq \frac{ y^2 + (x^2+z^2)}{2}$. Analogamente $\sqrt{x^2(y^2+z^2)} \leq \frac{ x^2 + (y^2+z^2)}{2}$. Sumando estas dos desigualdades, obtenemos el resultado.
 \end{sol}
+
+\begin{ejer}
+	Probar que si $a>1$, y $n\geq 1$, entonces 
+	\begin{equation}
+	a^{n} - 1 > n \left(a^{\frac{n+1}{2}} - a^{\frac{n-1}{2}}\right)
+	\end{equation}
+\end{ejer}
 
 \begin{sol}
 	$\frac{a^n-1}{n} = (a-1)\frac{(a^{n-1} + a^{n-2} \dots +1 ) }{n}\leq (a-1) a^{\frac{n(n-1)}{2n}} = a^{\frac{n+1}{2}} - a^{\frac{n-1}{2}}$. No te que la desigualdad es estricta porque $a>1$. 
 \end{sol}
 
+\begin{ejer}
+	Sean $a,b,c>0$ tales que $abc=1$. Muestre que
+	\begin{equation}
+		\frac{1+ab}{1+a} + \frac{1+bc}{1+b} + \frac{1+ca}{1+c} \geq 3
+	\end{equation}
+\end{ejer}
 \begin{sol}
 	Substituyamos $abc = 1$ en el denominador:
 	\begin{align}
@@ -45,6 +127,13 @@
 	&= \bigg( \frac{1}{abc} \bigg) ^{\frac{1}{3}} = 3 
 	\end{align}
 \end{sol}
+
+\begin{ejer}
+	Sean $a,b,c$ reales positivos con $a+b+c=1$. Muestre que
+	\begin{equation}
+		\left(\frac{1}{a}+ 1\right) + \left(\frac{1}{b}+ 1\right) + \left(\frac{1}{c}+ 1\right) \geq 64
+	\end{equation}
+\end{ejer}
 
 \begin{sol}
 	Expandiendo nos queda que:
@@ -55,7 +144,29 @@
 	Estos siguen de $\frac{a+b+c}{3} \geq (abc)^{\frac{1}{3}} \geq \frac{3}{\frac{1}{a}+\frac{1}{b} + \frac{1}{c}} \implies \frac{2}{abc} \geq 54$ $\land$ $\frac{1}{a}+\frac{1}{b} + \frac{1}{c} \geq 9$. 
 \end{sol}
 
+\begin{ejer}
+	Sea $x > -1$ y $n$ un entero positivo. Pruebe que $(1+x)^{n} \geq 1+xn$
+\end{ejer}
+
 \begin{sol}
 	Procedemos por inducci\'on en $n$. Para $n = 1$ es el caso base. Supongamos que se cumple para $n = k$, y multipliquemos por $(1+x)\geq 0$. $(1+x)^{k+1} = (1+x)(1+x)^{k} \geq (1+x)(1+xn) = 1+xn+x+x^2n \geq 1+xn+x = 1+ (n+1)x$. 
 \end{sol}
+
+\begin{ejer}
+	Sean $a, b, c \in \mathbb{R}^{+}$, tal que $a+b+c = 1$. Pruebe que
+	\begin{equation}
+		\frac{a^{2}}{a+b} + \frac{b^{2}}{b+c} + \frac{c^{2}}{c+a} \geq \frac{1}{2}  
+	\end{equation}
+\end{ejer}
+
+\begin{sol}
+	Tenemos la siguiente igualdad:
+
+	\begin{equation}
+		\frac{a^{2} + ab}{a+b} + \frac{b^{2} + bc}{a+c} + \frac{a^{2} + ab}{a+b} = 1
+	\end{equation}
+	Entonces debemos probar que $\frac{ab}{a+b} + \frac{bc}{b+c} + \frac{ac}{a+c} \leq \frac{1}{2}$. sto sigue de la desigualdad $\frac{ab}{a+b} \leq \frac{a+b}{4}$ (que a su vez sigue de MA-MG).
+\end{sol}
+
+
 
