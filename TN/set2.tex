@@ -39,8 +39,22 @@
 \end{sol}
 
 \begin{sol}
+	
+	(Solución 1 - Elvis)
 	Aplicaremos Inducci\'on sobre n. Se pueden checar valores chicos, para corroborar el caso base. Por ejemplo, $n = 1, 2, 3, 4, 5$. Supongamos que la f\'ormula se cumple para $n$, y sea $q$ un primo cualquiera. Queremos probar que la f\'ormula es satisfecha para $nq$.
 
-	Sea $v$ la m\'axima potencia de $q$ que divide a $n$. $\sum_{d|nq} \varphi(d) = \sum_{d|n, d\not{|} q^{v}}\varphi(n) +\sum_{q^{v} |i} \varphi(q\cdot i) = n + \sum_{i|\frac{n}{q^{v+1}}} \varphi(q^{v})\varphi(i) = n + \varphi(q^v+1) (\sum_{i|\frac{n}{q^{v}}}) \varphi(i) = n + q^{v}(q-1)\frac{n}{q^{v}}= n + (q-1)n = nq. \square$
+	Sea $v$ la m\'axima potencia de $q$ que divide a $n$. Luego,
+	
+	\begin{align*}
+		\sum_{d|nq} \varphi(d) &=  \\
+		 &=	\sum_{\substack{d|nq \\ q^{v+1}\nmid d}}\varphi(d) 
+		     +\sum_{\substack{d|nq \\ q^{v+1}| d}} \varphi(d) \\
+		 &= \sum_{d|n }\varphi(d)  + \sum_{d|\frac{nq}{q^{v+1}}} \varphi(q^{v+1})\varphi(d) \\
+		 &= n + \varphi(q^{v+1}) \left(\sum_{i|\frac{n}{q^{v}}} \varphi(i) \right) \\
+		 & = n + q^{v}(q-1)\frac{n}{q^{v}} \\
+		 &= n + (q-1)n = nq	
+	\end{align*}
+
+	La primera igualdad sigue de dividir los divisores de $nq$ en aquellos que dividen a $n$ pero no a $nq$ y aquellos que dividen a $n$ y $nq$. Seguidamente, se utilizó la hipótesis inductiva 2 veces.
 \end{sol}
 
